@@ -1,0 +1,127 @@
+/*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+	@media
+	  only screen 
+    and (max-width: 760px), (min-device-width: 500px) 
+    and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+        }
+        
+        		/* Force table to not be like tables anymore */
+		/* table, TableHead, TableBody, TableCell {
+			display: block;
+		} */
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+        }
+        
+        /* Hide table headers (but not display: none;, for accessibility) */
+		/* TableHead TableRow {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+        } */
+    
+        tr {
+            margin: 0 0 1rem 0;
+        }
+
+        /* TableRow {
+            margin: 0 0 1rem 0;
+        } */
+    
+        tr:nth-child(odd) {
+            background: #ccc;
+        }
+
+        /* TableRow:nth-child(odd) {
+            background: #ccc;
+        } */
+    
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			display: block !important;
+			padding: 0px !important;
+            /* padding-left: 50%; */
+        }
+        
+        /* TableCell {
+			/* Behave  like a "row" */
+		/*	border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+        } */
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 10% !important;
+			padding-right: 5px;
+			white-space: nowrap;
+		}
+
+		tr td:nth-of-type(0){ 
+			text-align: left;
+			margin-left: 25px;
+			font-weight: bold;
+			width: 100% !im;
+		}
+		
+		tr td:nth-of-type(1){ 
+			text-align: left;
+			margin-left: 25px;
+			font-weight: bold;
+		}
+        
+       /* 
+		TableCell:before {
+			/* Now like a table header */
+		/*	position: absolute; */
+			/* Top/left values mimic padding */
+		/*	top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		} */
+
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+        */
+        td:nth-of-type(0):before { content: " "; }
+		/* td:nth-of-type(1):before { content: "Team Leader /Criteria"; } */
+		td:nth-of-type(2):before { content: "Week 1"; }
+		td:nth-of-type(3):before { content: "Week 2"; }
+		td:nth-of-type(4):before { content: "Week 3"; }
+		td:nth-of-type(5):before { content: "Week 4"; }
+		td:nth-of-type(6):before { content: "TOTAL"; }
+
+/* 
+        TableCell:nth-of-type(1):before { content: "First Name"; }
+		TableCell:nth-of-type(2):before { content: "Last Name"; }
+		TableCell:nth-of-type(3):before { content: "Job Title"; }
+		TableCell:nth-of-type(4):before { content: "Favorite Color"; }
+		TableCell:nth-of-type(5):before { content: "Wars of Trek?"; }
+		TableCell:nth-of-type(6):before { content: "Secret Alias"; }
+		TableCell:nth-of-type(7):before { content: "Date of Birth"; }
+		TableCell:nth-of-type(8):before { content: "Dream Vacation City"; }
+		TableCell:nth-of-type(9):before { content: "GPA"; }
+        TableCell:nth-of-type(10):before { content: "Arbitrary Data"; } */
+        
+
+    }
